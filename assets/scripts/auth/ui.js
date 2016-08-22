@@ -7,8 +7,12 @@ const success = (data) => {
 };
 // stores user data
 const signInSuccess = (data) => {
+  console.log(data.user);
   app.user = data.user;
   console.log(app);
+  if (data.user.artist === true) {
+    $('#creation-form').show();
+  }
 };
 
 const signOutSuccess = () => {

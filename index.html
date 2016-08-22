@@ -52,8 +52,8 @@
               <form id="sign-up">
                 <fieldset>
                   <legend>Sign up!</legend>
-                  <input type="text" name="credentials[email]" placeholder="e-mail">
-                  <input type="password" name="credentials[password]" placeholder="password">
+                  <input type="text" name="credentials[email]" placeholder="e-mail"><br>
+                  <input type="password" name="credentials[password]" placeholder="password"><br>
                   <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation"><br>
                   Are you an SFX artist?<br>
                   <input type="radio" name="credentials[artist]" value="true">Yes<br>
@@ -77,7 +77,7 @@
                 <fieldset>
                   <legend>Sign in!</legend>
                   <input type="text" name="credentials[email]" placeholder="e-mail">
-                  <input type="password" name="credentials[password]" placeholder="password">
+                  <input type="password" name="credentials[password]" placeholder="password"><br>
                   <input type="submit" name="submit" value="Sign in!">
                 </fieldset>
               </form>
@@ -220,7 +220,7 @@
     est laborum.</p> -->
 
     <!-- Add My Creations forms -->
-    <section>
+    <section id="creation-form">
       <form class="add-creation-form" action="/add-my-monster" method="post">
         <div class="creation-form">
             <label for="title">Title of work:</label>
