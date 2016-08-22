@@ -31,7 +31,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Sign-up/Sign-in!</b><span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li class="sign-up" data-toggle="modal" data-target="#sign-up"><a href="#">Sign-Up</a></li>
+                <li class="sign-up" data-toggle="modal" data-target="#sign-up-modal"><a href="#">Sign-Up</a></li>
                 <li class="sign-in"><a href="#">Sign-In</a></li>
                 <li class="change-password"><a href="#">Change Password</a></li>
                 <li class="sign-out"><a href="#">Sign-Out</a></li>
@@ -44,29 +44,7 @@
     <!-- END NAVBAR -->
 
 
-    <!-- START OF SIGN UP MODAL -->
-      <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <form id="sign-up">
-                <fieldset>
-                  <legend>Sign up!</legend>
-                  <input type="text" name="credentials[email]" placeholder="e-mail">
-                  <input type="password" name="credentials[password]" placeholder="password">
-                  <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation"><br>
-                  Are you an SFX artist?<br>
-                  <input type="radio" name="credentials[artist]" value="true">Yes<br>
-                  <input type="radio" name="credentials[artist]" value="false">No<br>
-                  <input type="submit" name="submit" value="Sign up!">
-                </fieldset>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-<!-- END OF SIGN UP MODAL -->
+
 <!-- START OF SIGN IN MODAL -->
       <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -250,6 +228,29 @@
 <!-- end of page buttons -->
 
 
+<!-- START OF SIGN UP MODAL -->
+  <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign up!</legend>
+              <input type="text" name="credentials[email]" placeholder="e-mail">
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation"><br>
+              Are you an SFX artist?<br>
+              <input type="radio" name="credentials[artist]" value="true">Yes<br>
+              <input type="radio" name="credentials[artist]" value="false">No<br>
+              <input type="submit" name="submit" value="Sign up!">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END OF SIGN UP MODAL -->
 
 
     </body>

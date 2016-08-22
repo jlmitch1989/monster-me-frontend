@@ -10,14 +10,15 @@ const authEvents = require('./auth/events.js');
 
 // Sign Up Modal Click Events
 $(()=>{
-  $('.sign-up').on('click', function(){
-    // console.log('You clicked sign up');
-    $('#sign-up-modal').modal('show');
-    $('.save-sign-up').on('click', function(){
-      // console.log('you clicked save sign out');
-      $('#sign-up-modal').modal('hide');
-    });
-  });
+  // $('.sign-up').on('click', function(){
+  //   // console.log('You clicked sign up');
+  //   $('#sign-up-modal').modal('show');
+  //   $('#sign-up').css('display', 'block');
+  //   $('.save-sign-up').on('click', function(){
+  //     // console.log('you clicked save sign out');
+  //     $('#sign-up-modal').modal('hide');
+  //   });
+  // });
 });
 
 // Sign In Modal Click Events
@@ -27,7 +28,7 @@ $(()=>{
     $('#sign-in-modal').modal('show');
     $('.save-sign-in').on('click', function(){
       // console.log('You clicked Submit');
-      $('#sign-in-modal').modal('hide');
+      // $('#sign-in-modal').modal('hide');
     });
   });
 });
