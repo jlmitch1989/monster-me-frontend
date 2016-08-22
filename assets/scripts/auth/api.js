@@ -32,30 +32,40 @@ const signOut = () => $.ajax({
     },
   });
 
-  // ADD CREATION AJAX
-  const addCreation = (data) => $.ajax({
-    url: app.api + '/creations',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-    data,
-  });
+// ADD CREATION AJAX
+const addCreation = (data) => $.ajax({
+  url: app.api + '/creations',
+  method: 'POST',
+  headers: {
+    Authorization: 'Token token=' + app.user.token,
+  },
+  data,
+});
 
-  // View Creations
-  const viewCreations = () => $.ajax({
-    url: app.api + '/creations',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token' + app.user.token,
-    },
-  });
+// View Creations
+const viewCreations = () => $.ajax({
+  url: app.api + '/creations',
+  method: 'GET',
+  headers: {
+    Authorization: 'Token token' + app.user.token,
+  },
+});
 
-  module.exports = {
+// view Artist
+const viewArtist = () => $.ajax({
+  url: app.api + '/users',
+  method: 'GET',
+  headers: {
+    Authorization: 'Token token' + app.user.token,
+  },
+});
+
+module.exports = {
     signUp,
     signIn,
     changePassword,
     signOut,
     addCreation,
-    viewCreations
+    viewCreations,
+    viewArtist
   };

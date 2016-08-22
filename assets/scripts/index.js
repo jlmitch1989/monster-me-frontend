@@ -14,10 +14,10 @@ $(()=>{
   //   // console.log('You clicked sign up');
   //   $('#sign-up-modal').modal('show');
   //   $('#sign-up').css('display', 'block');
-  //   $('.save-sign-up').on('click', function(){
-  //     // console.log('you clicked save sign out');
-  //     $('#sign-up-modal').modal('hide');
-  //   });
+    $('.save-sign-up').on('click', function(){
+      // console.log('you clicked save sign out');
+      $('#sign-up-modal').modal('hide');
+    });
   // });
 });
 

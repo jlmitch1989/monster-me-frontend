@@ -28,7 +28,7 @@ const addCreationSuccess = (data) => {
 
 // handlebars view creations
 let displayCreations = function(creations) {
-  console.log('creations' + creations);
+  // console.log('creations' + creations);
   let creationTemplate = require('../templates_creations/creations.handlebars');
   $('.table').empty();
   $('.table').html(creationTemplate({
@@ -44,6 +44,24 @@ const viewCreationsSuccess = (data) => {
   displayCreations(data);
 };
 
+// handlebars view artist
+let displayArtist = function(users) {
+  console.log('Artist' + users);
+  let artistTemplate = require('../templates_artist/artist.handlebars');
+  $('.table').empty();
+  $('.table').html(artistTemplate({
+    users
+  }));
+};
+
+// View artist
+const viewArtistSuccess = (data) => {
+  console.log(data);
+  app.users = data.users;
+  console.log(app);
+  displayArtist(data);
+};
+
 
 module.exports = {
   failure,
@@ -51,5 +69,6 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   addCreationSuccess,
-  viewCreationsSuccess
+  viewCreationsSuccess,
+  viewArtistSuccess
 };
