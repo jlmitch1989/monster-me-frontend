@@ -26,11 +26,24 @@ const addCreationSuccess = (data) => {
   console.log(app);
 };
 
+// handlebars view creations
+let displayCreations = function(creations) {
+  console.log('creations' + creations);
+  let creationTemplate = require('../templates_creations/creations.handlebars');
+  $('.table').empty();
+  $('.table').html(creationTemplate({
+    creations
+  }));
+};
+
 // View Creations
 const viewCreationsSuccess = (data) => {
-  app.creation = data.creation;
+  console.log(data);
+  app.creations = data.creations;
   console.log(app);
+  displayCreations(data);
 };
+
 
 module.exports = {
   failure,

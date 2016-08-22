@@ -43,7 +43,7 @@ const signOut = () => $.ajax({
   });
 
   // View Creations
-  const viewCreations = (data) => $.ajax({
+  const viewCreations = () => $.ajax({
     url: app.api + '/creations',
     method: 'GET',
     headers: {

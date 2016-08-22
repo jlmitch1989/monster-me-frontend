@@ -1,0 +1,14 @@
+{{>partial}}
+
+{{#each this}}
+{{#each creations}}
+
+<tr>
+  <td>{{this.title}}</td>
+  <td><img src="{{this.picture}}" alt="" /></td>
+  <td>{{this.artist_name}}</td>
+  <td>{{this.description}}</td>
+</tr>
+
+  {{/each}}
+{{/each}}
