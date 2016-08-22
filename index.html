@@ -128,18 +128,43 @@
 <!-- Top of page begin -->
     <header>
       <h1>Monster Me &#125;</h1>
-      <img src="/assets/eye-hand.jpg" alt="" />
+      <img id="main-photo" src="/assets/eye-hand.jpg" alt="" />
     </header>
 <!-- Top of page end -->
 
 <!-- Table for creations an artist handlerbars -->
-<table class="table">
+    <table class="table">
 
-</table>
+    </table>
+
+    <!-- Add My Creations forms -->
+    <section id="creation-form-section">
+      <form class="add-creation-form" action="/add-my-monster" method="post">
+        <div class="creation-form">
+            <label for="title">Title of work:</label>
+            <input type="text" id="title" name="creation[title]" />
+        </div>
+        <div class="creation-form">
+            <label for="picture">Picture URL:</label>
+            <input type="text" id="picture" name="creation[picture]" />
+        </div>
+        <div class="creation-form">
+            <label for="artist-name">Artist name:</label>
+            <input type="text" id="artist-name" name="creation[artist_name]" />
+        </div>
+        <div class="creation-form">
+            <label for="description">Describe your work:</label>
+            <textarea id="work_description" name="creation[description]"></textarea>
+        </div>
+        <div class="button_to_create">
+          <button class= "monster-me-btn" type="submit">Monster Me!</button>
+        </div>
+      </form>
+    </section>
 
 
 
-    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    <p id="body-describe">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
     minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
     ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
@@ -217,32 +242,9 @@
     ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
     velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-    est laborum.</p> -->
+    est laborum.</p>
 
-    <!-- Add My Creations forms -->
-    <section id="creation-form">
-      <form class="add-creation-form" action="/add-my-monster" method="post">
-        <div class="creation-form">
-            <label for="title">Title of work:</label>
-            <input type="text" id="title" name="creation[title]" />
-        </div>
-        <div class="creation-form">
-            <label for="picture">Picture URL:</label>
-            <input type="text" id="picture" name="creation[picture]" />
-        </div>
-        <div class="creation-form">
-            <label for="artist-name">Artist name:</label>
-            <input type="text" id="artist-name" name="creation[artist_name]" />
-        </div>
-        <div class="creation-form">
-            <label for="description">Describe your work:</label>
-            <textarea id="work_description" name="creation[description]"></textarea>
-        </div>
-        <div class="button_to_create">
-          <button class= "monster-me-btn" type="submit">Monster Me!</button>
-        </div>
-      </form>
-    </section>
+
 
 <!-- Page buttons -->
     <div class="page-buttons">

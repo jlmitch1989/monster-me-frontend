@@ -23,7 +23,8 @@ $(()=>{
 
 // Sign In Modal Click Events
 $(()=>{
-  $('#creation-form').hide();
+  $('#creation-form-section').hide();
+  $('#body-describe').hide();
   $('.sign-in').on('click', function(){
     // console.log('You clicked Sign In!');
     $('#sign-in-modal').modal('show');

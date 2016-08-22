@@ -76,6 +76,9 @@ const addHandlers = () => {
   $('.go-to-artist').on('click', showArtist);
   $('.home').on('click', function(){
     $('.table').hide();
+    $('#creation-form-section').show();
+    $('#body-describe').show();
+    $('#main-photo').show();
   });
 };
 

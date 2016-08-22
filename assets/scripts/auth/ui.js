@@ -3,6 +3,7 @@
 const app =require('../app');
 
 const success = (data) => {
+  $('#sign-up-modal').hide();
   console.log(data);
 };
 // stores user data
@@ -10,14 +11,18 @@ const signInSuccess = (data) => {
   console.log(data.user);
   app.user = data.user;
   console.log(app);
+  $('#body-describe').show();
+  // Displays the Creation Form only if users declared to be an artist
   if (data.user.artist === true) {
-    $('#creation-form').show();
+    $('#creation-form-section').show();
   }
 };
 
 const signOutSuccess = () => {
   delete app.user;
   console.log(app);
+  $('#creation-form-section').hide();
+  $('#body-describe').hide();
 };
 
 const failure = (error) => {
@@ -45,6 +50,9 @@ const viewCreationsSuccess = (data) => {
   console.log(data);
   app.creations = data.creations;
   console.log(app);
+  $('#main-photo').hide();
+  $('#creation-form-section').hide();
+  $('#body-describe').hide();
   displayCreations(data);
 };
 
@@ -63,6 +71,7 @@ const viewArtistSuccess = (data) => {
   console.log(data);
   app.users = data.users;
   console.log(app);
+  $('#main-photo').hide();
   displayArtist(data);
 };
 
