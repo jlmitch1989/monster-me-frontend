@@ -6,9 +6,9 @@ specs.js
 _SpecRunner.html
 # *.woff2
 # *.woff
-*.svg
-*.ttf
-*.eot
+# *.svg
+# *.ttf
+# *.eot
 
 # Created by https://www.gitignore.io
 
