@@ -75,6 +75,10 @@ const viewArtistSuccess = (data) => {
   displayArtist(data);
 };
 
+// delete creation
+const deleteCreationSuccess = () => {
+  console.log(app);
+};
 
 module.exports = {
   failure,
@@ -83,5 +87,6 @@ module.exports = {
   signOutSuccess,
   addCreationSuccess,
   viewCreationsSuccess,
-  viewArtistSuccess
+  viewArtistSuccess,
+  deleteCreationSuccess
 };

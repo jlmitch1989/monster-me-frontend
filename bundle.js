@@ -149,6 +149,12 @@ webpackJsonp([0],[
 	  api.viewArtist().done(ui.viewArtistSuccess).fail(ui.failure);
 	};
 
+	// Delete Creation
+	var deleteMyCreation = function deleteMyCreation() {
+	  var creationID = $(this).data('id');
+	  api.deleteCreation(creationID).done(ui.deleteCreationSuccess).fail(ui.failure);
+	};
+
 	var addHandlers = function addHandlers() {
 	  $('#sign-up').on('submit', onSignUp);
 	  $('#sign-in').on('submit', onSignIn);
@@ -163,6 +169,7 @@ webpackJsonp([0],[
 	    $('#body-describe').show();
 	    $('#main-photo').show();
 	  });
+	  $('.table').on('click', '.delete-creation', deleteMyCreation);
 	};
 
 	module.exports = {
@@ -313,6 +320,17 @@ webpackJsonp([0],[
 	  });
 	};
 
+	// Delete creation
+	var deleteCreation = function deleteCreation(creationID) {
+	  return $.ajax({
+	    url: app.api + '/creations/' + creationID,
+	    method: 'DELETE',
+	    headers: {
+	      Authorization: 'Token token=' + app.user.token
+	    }
+	  });
+	};
+
 	module.exports = {
 	  signUp: signUp,
 	  signIn: signIn,
@@ -320,7 +338,8 @@ webpackJsonp([0],[
 	  signOut: signOut,
 	  addCreation: addCreation,
 	  viewCreations: viewCreations,
-	  viewArtist: viewArtist
+	  viewArtist: viewArtist,
+	  deleteCreation: deleteCreation
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
@@ -331,7 +350,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  api: 'https://monsterme.herokuapp.com'
+	  api: 'http://localhost:3000'
 	};
 
 	module.exports = app;
@@ -418,6 +437,11 @@ webpackJsonp([0],[
 	  displayArtist(data);
 	};
 
+	// delete creation
+	var deleteCreationSuccess = function deleteCreationSuccess() {
+	  console.log(app);
+	};
+
 	module.exports = {
 	  failure: failure,
 	  success: success,
@@ -425,7 +449,8 @@ webpackJsonp([0],[
 	  signOutSuccess: signOutSuccess,
 	  addCreationSuccess: addCreationSuccess,
 	  viewCreationsSuccess: viewCreationsSuccess,
-	  viewArtistSuccess: viewArtistSuccess
+	  viewArtistSuccess: viewArtistSuccess,
+	  deleteCreationSuccess: deleteCreationSuccess
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
@@ -444,7 +469,9 @@ webpackJsonp([0],[
 
 	  return "\n<tr>\n  <td style=\"color: #fff; font-size: 18px; text-align: center; \">"
 	    + alias2(alias1((depth0 != null ? depth0.title : depth0), depth0))
-	    + "</td>\n  <td><img src=\""
+	    + "</td>\n  <td>\n    <div class=\"btn-group\" role=\"group\" aria-label=\"...\">\n      <button data-id=\""
+	    + alias2(alias1((depth0 != null ? depth0.id : depth0), depth0))
+	    + "\" type=\"button\" class=\"btn btn-danger delete-creation\">Delete</button>\n    </div>\n  </td>\n  <td><img src=\""
 	    + alias2(alias1((depth0 != null ? depth0.picture : depth0), depth0))
 	    + "\" alt=\"\" /></td>\n  <td style=\"color: #fff; font-size: 18px; text-align: center; \">"
 	    + alias2(alias1((depth0 != null ? depth0.artist_name : depth0), depth0))
@@ -1641,7 +1668,7 @@ webpackJsonp([0],[
 	var Handlebars = __webpack_require__(9);
 	function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 	module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-	    return "<tr>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">title</td>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">picture</td>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">artist_name<tb>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">description</td>\n</tr>\n";
+	    return "<tr>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">title</td>\n  <td></td>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">picture</td>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">artist_name<tb>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">description</td>\n</tr>\n";
 	},"useData":true});
 
 /***/ },

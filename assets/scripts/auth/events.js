@@ -65,6 +65,13 @@ const showArtist = function () {
     .fail(ui.failure);
 };
 
+// Delete Creation
+const deleteMyCreation = function () {
+  let creationID = $(this).data('id');
+  api.deleteCreation(creationID)
+    .done(ui.deleteCreationSuccess)
+    .fail(ui.failure);
+};
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
@@ -80,6 +87,7 @@ const addHandlers = () => {
     $('#body-describe').show();
     $('#main-photo').show();
   });
+  $('.table').on('click', '.delete-creation', deleteMyCreation);
 };
 
 module.exports = {

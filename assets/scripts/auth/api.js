@@ -60,6 +60,15 @@ const viewArtist = () => $.ajax({
   },
 });
 
+// Delete creation
+const deleteCreation = (creationID) => $.ajax({
+  url: app.api + '/creations/' + creationID,
+  method: 'DELETE',
+  headers: {
+    Authorization: 'Token token=' + app.user.token,
+  },
+});
+
 module.exports = {
     signUp,
     signIn,
@@ -67,5 +76,6 @@ module.exports = {
     signOut,
     addCreation,
     viewCreations,
-    viewArtist
+    viewArtist,
+    deleteCreation
   };
