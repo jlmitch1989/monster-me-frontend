@@ -87,6 +87,12 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut);
   $('.add-creation-form').on('submit', addMyCreation);
   $('.view-creations-btn').on('click', showCreations);
+  $('.view-creations-btn').on('click', function(){
+    $('.table').show();
+    $('#main-photo').hide();
+    $('#creation-form-section').hide();
+    $('#body-describe').hide();
+  });
   $('.go-to-artist').on('click', showArtist);
   $('.go-to-artist').on('click', function(){
     $('.table').show();
@@ -102,6 +108,12 @@ const addHandlers = () => {
   });
   $('.table').on('click', '.delete-creation', deleteMyCreation);
   $('#user-creations').on('click', userCreations);
+  $('#user-creations').on('click', function(){
+    $('.table').show();
+    $('#main-photo').hide();
+    $('#creation-form-section').hide();
+    $('#body-describe').hide();
+  });
 };
 
 module.exports = {

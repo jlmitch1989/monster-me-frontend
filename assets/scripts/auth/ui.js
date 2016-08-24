@@ -50,15 +50,22 @@ const viewCreationsSuccess = (data) => {
   console.log(data);
   app.creations = data.creations;
   console.log(app);
-  // $('#main-photo').hide();
-  // $('#creation-form-section').hide();
-  // $('#body-describe').hide();
   displayCreations(data);
+};
+
+// handlebars view creations
+let displayUserCreations = function(creations) {
+  // console.log('creations' + creations);
+  let userCreationTemplate = require('../templates_user_creations/user_creations.handlebars');
+  $('.table').empty();
+  $('.table').html(userCreationTemplate({
+    creations
+  }));
 };
 
 const viewUserCreationsSuccess = (data) => {
   console.log(data);
-
+displayUserCreations(data);
 };
 
 // handlebars view artist
@@ -76,7 +83,6 @@ const viewArtistSuccess = (data) => {
   console.log(data);
   app.users = data.users;
   console.log(app);
-  // $('#main-photo').hide();
   displayArtist(data);
 };
 

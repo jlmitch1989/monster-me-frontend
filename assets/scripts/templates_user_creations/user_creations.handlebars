@@ -5,6 +5,11 @@
 
 <tr>
   <td style="color: #fff; font-size: 18px; text-align: center; ">{{this.title}}</td>
+  <td>
+    <div class="btn-group" role="group" aria-label="...">
+      <button data-id="{{this.id}}" type="button" class="btn btn-danger delete-creation">Delete</button>
+    </div>
+  </td>
   <td><img src="{{this.picture}}" alt="" /></td>
   <td style="color: #fff; font-size: 18px; text-align: center; ">{{this.artist_name}}</td>
   <td style="color: #fff; font-size: 18px; text-align: center; ">{{this.description}}</td>
