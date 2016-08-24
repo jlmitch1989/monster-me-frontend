@@ -57,6 +57,12 @@ const showCreations = function () {
     .fail(ui.failure);
 };
 
+const userCreations = function() {
+  api.viewUserCreations()
+    .done(ui.viewUserCreationsSuccess)
+    .fail(ui.failure)
+};
+
 // Show artist info
 const showArtist = function () {
   // console.log('HERE ARE YOUR ARTIST');
@@ -73,6 +79,7 @@ const deleteMyCreation = function () {
     .fail(ui.failure);
 };
 
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
@@ -81,13 +88,20 @@ const addHandlers = () => {
   $('.add-creation-form').on('submit', addMyCreation);
   $('.view-creations-btn').on('click', showCreations);
   $('.go-to-artist').on('click', showArtist);
+  $('.go-to-artist').on('click', function(){
+    $('.table').show();
+    $('#main-photo').hide();
+    $('#creation-form-section').hide();
+    $('#body-describe').hide();
+  });
   $('.home').on('click', function(){
-    $('.table').hide();
     $('#creation-form-section').show();
     $('#body-describe').show();
     $('#main-photo').show();
+    $('.table').hide();
   });
   $('.table').on('click', '.delete-creation', deleteMyCreation);
+  $('#user-creations').on('click', userCreations);
 };
 
 module.exports = {

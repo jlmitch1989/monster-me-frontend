@@ -50,10 +50,15 @@ const viewCreationsSuccess = (data) => {
   console.log(data);
   app.creations = data.creations;
   console.log(app);
-  $('#main-photo').hide();
-  $('#creation-form-section').hide();
-  $('#body-describe').hide();
+  // $('#main-photo').hide();
+  // $('#creation-form-section').hide();
+  // $('#body-describe').hide();
   displayCreations(data);
+};
+
+const viewUserCreationsSuccess = (data) => {
+  console.log(data);
+
 };
 
 // handlebars view artist
@@ -71,7 +76,7 @@ const viewArtistSuccess = (data) => {
   console.log(data);
   app.users = data.users;
   console.log(app);
-  $('#main-photo').hide();
+  // $('#main-photo').hide();
   displayArtist(data);
 };
 
@@ -88,5 +93,6 @@ module.exports = {
   addCreationSuccess,
   viewCreationsSuccess,
   viewArtistSuccess,
-  deleteCreationSuccess
+  deleteCreationSuccess,
+  viewUserCreationsSuccess
 };

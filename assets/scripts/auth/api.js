@@ -47,7 +47,15 @@ const viewCreations = () => $.ajax({
   url: app.api + '/creations',
   method: 'GET',
   headers: {
-    Authorization: 'Token token' + app.user.token,
+    Authorization: 'Token token=' + app.user.token,
+  },
+});
+
+const viewUserCreations = () => $.ajax({
+  url: app.api + '/creations?user_creations=true',
+  method: 'GET',
+  headers: {
+    Authorization: 'Token token=' + app.user.token,
   },
 });
 
@@ -56,7 +64,7 @@ const viewArtist = () => $.ajax({
   url: app.api + '/users',
   method: 'GET',
   headers: {
-    Authorization: 'Token token' + app.user.token,
+    Authorization: 'Token token=' + app.user.token,
   },
 });
 
@@ -69,6 +77,7 @@ const deleteCreation = (creationID) => $.ajax({
   },
 });
 
+
 module.exports = {
     signUp,
     signIn,
@@ -77,5 +86,6 @@ module.exports = {
     addCreation,
     viewCreations,
     viewArtist,
-    deleteCreation
+    deleteCreation,
+    viewUserCreations
   };
