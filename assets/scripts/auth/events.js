@@ -85,6 +85,11 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
+  $('#sign-out').on('submit', function(){
+    $('.table').hide();
+    $('#main-photo').show();
+    $('#body-describe').show();
+  });
   $('.add-creation-form').on('submit', addMyCreation);
   $('.view-creations-btn').on('click', showCreations);
   $('.view-creations-btn').on('click', function(){
@@ -101,10 +106,10 @@ const addHandlers = () => {
     $('#body-describe').hide();
   });
   $('.home').on('click', function(){
+    $('.table').hide();
     $('#creation-form-section').show();
     $('#body-describe').show();
     $('#main-photo').show();
-    $('.table').hide();
   });
   $('.table').on('click', '.delete-creation', deleteMyCreation);
   $('#user-creations').on('click', userCreations);

@@ -14,23 +14,19 @@ $(()=>{
   //   // console.log('You clicked sign up');
   //   $('#sign-up-modal').modal('show');
   //   $('#sign-up').css('display', 'block');
-    $('.save-sign-up').on('click', function(){
-      // console.log('you clicked save sign out');
-      $('#sign-up-modal').modal('hide');
-    });
+  $('.save-sign-up').on('click', function(){
+    $('#sign-up-modal').modal('hide');
+  });
   // });
 });
 
 // Sign In Modal Click Events
 $(()=>{
   $('#creation-form-section').hide();
-  $('#body-describe').hide();
+  $('#user-creations').hide();
   $('.sign-in').on('click', function(){
-    // console.log('You clicked Sign In!');
     $('#sign-in-modal').modal('show');
     $('.save-sign-in').on('click', function(){
-      // console.log('You clicked Submit');
-      // $('#sign-in-modal').modal('hide');
     });
   });
 });
@@ -38,7 +34,6 @@ $(()=>{
 // Sign Out Modal Click Events
 $(()=>{
   $('.sign-out').on('click', function(){
-    // console.log('POPOVER');
     $('#sign-out-modal').modal('show');
   });
 });

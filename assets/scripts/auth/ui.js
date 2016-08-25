@@ -15,14 +15,16 @@ const signInSuccess = (data) => {
   // Displays the Creation Form only if users declared to be an artist
   if (data.user.artist === true) {
     $('#creation-form-section').show();
+    $('#user-creations').show();
+  // } else{
+  //   $('#creation-form-section').hide();
+  //   $('#user-creations').hide();
   }
 };
 
 const signOutSuccess = () => {
   delete app.user;
   console.log(app);
-  $('#creation-form-section').hide();
-  $('#body-describe').hide();
 };
 
 const failure = (error) => {

@@ -32,6 +32,16 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   color: #fff;
 }
 
+// View user's creations
+#user-creations {
+  background: #146DAA;
+  border-color: #fff;
+  color: #fff;
+  font-family: 'Nosifer', cursive;
+  font-size: 22px;
+  height: 40px;
+  width: 335px;
+}
 
 // padding for the fixed navbar to keep from overlaying my text
 body {
@@ -75,12 +85,17 @@ h1 {
 p {
   color: #fff;
   text-align: center;
-  top: -285px;
-  // z-index: 1;
   width: 50%;
-  margin: 0 auto;
-  position: relative;
-  font-size: 21px;
+  margin: 12% auto;
+  font-size: 23px;
+  line-height: 45px;
+}
+
+// Adding font to title name in body
+.body-title-insert {
+  color: #fff;
+  font-family: 'youmurderer_bbregular', Arial, sans-serif;
+  font-size: 60px;
 }
 
 //add creation form
@@ -91,8 +106,7 @@ p {
   padding: 17px;
   line-height: 30px;
   font-size: 17px;
-  position:relative;
-  top: 15px;
+  float: left;
 }
 
 .creation-form {
