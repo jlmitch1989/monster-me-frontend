@@ -383,7 +383,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  api: 'http://monsterme.herokuapp.com'
+	  api: 'https://monsterme.herokuapp.com'
 	};
 
 	module.exports = app;

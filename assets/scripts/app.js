@@ -1,7 +1,7 @@
 'use strict';
 
 const app = {
-  api: 'http://monsterme.herokuapp.com',
+  api: 'https://monsterme.herokuapp.com',
 };
 
 module.exports = app;
