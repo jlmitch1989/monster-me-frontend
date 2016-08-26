@@ -93,6 +93,10 @@ const deleteCreationSuccess = () => {
   console.log(app);
 };
 
+const addPatchCreationTitleSuccess = () => {
+  console.log(app);
+};
+
 module.exports = {
   failure,
   success,
@@ -102,5 +106,6 @@ module.exports = {
   viewCreationsSuccess,
   viewArtistSuccess,
   deleteCreationSuccess,
-  viewUserCreationsSuccess
+  viewUserCreationsSuccess,
+  addPatchCreationTitleSuccess
 };

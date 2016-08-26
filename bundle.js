@@ -153,6 +153,15 @@ webpackJsonp([0],[
 	  api.deleteCreation(creationID).done(ui.deleteCreationSuccess).fail(ui.failure);
 	};
 
+	var editCreationID = void 0;
+
+	var patchCreationTitle = function patchCreationTitle(event) {
+	  var data = getFormFields(this);
+	  // console.log('data:', data);
+	  event.preventDefault();
+	  api.changeCreationTitle(data, editCreationID).done(ui.addPatchCreationTitleSuccess).fail(ui.failure);
+	};
+
 	var addHandlers = function addHandlers() {
 	  $('#sign-up').on('submit', onSignUp);
 	  $('#sign-in').on('submit', onSignIn);
@@ -191,6 +200,11 @@ webpackJsonp([0],[
 	    $('#main-photo').hide();
 	    $('#creation-form-section').hide();
 	    $('#body-describe').hide();
+	  });
+	  $('.change-title-form').on('submit', patchCreationTitle);
+	  $('.table').on('click', '.change-creation-title', function () {
+	    editCreationID = $(this).data('id');
+	    $('#title-change-modal').modal('show');
 	  });
 	};
 
@@ -363,6 +377,17 @@ webpackJsonp([0],[
 	  });
 	};
 
+	var changeCreationTitle = function changeCreationTitle(data, creationID) {
+	  return $.ajax({
+	    url: app.api + '/creations/' + creationID,
+	    method: 'PATCH',
+	    headers: {
+	      Authorization: 'Token token=' + app.user.token
+	    },
+	    data: data
+	  });
+	};
+
 	module.exports = {
 	  signUp: signUp,
 	  signIn: signIn,
@@ -372,7 +397,8 @@ webpackJsonp([0],[
 	  viewCreations: viewCreations,
 	  viewArtist: viewArtist,
 	  deleteCreation: deleteCreation,
-	  viewUserCreations: viewUserCreations
+	  viewUserCreations: viewUserCreations,
+	  changeCreationTitle: changeCreationTitle
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
@@ -488,6 +514,10 @@ webpackJsonp([0],[
 	  console.log(app);
 	};
 
+	var addPatchCreationTitleSuccess = function addPatchCreationTitleSuccess() {
+	  console.log(app);
+	};
+
 	module.exports = {
 	  failure: failure,
 	  success: success,
@@ -497,7 +527,8 @@ webpackJsonp([0],[
 	  viewCreationsSuccess: viewCreationsSuccess,
 	  viewArtistSuccess: viewArtistSuccess,
 	  deleteCreationSuccess: deleteCreationSuccess,
-	  viewUserCreationsSuccess: viewUserCreationsSuccess
+	  viewUserCreationsSuccess: viewUserCreationsSuccess,
+	  addPatchCreationTitleSuccess: addPatchCreationTitleSuccess
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
@@ -1731,7 +1762,9 @@ webpackJsonp([0],[
 
 	  return "\n<tr>\n  <td style=\"color: #fff; font-size: 18px; text-align: center; \">"
 	    + alias2(alias1((depth0 != null ? depth0.title : depth0), depth0))
-	    + "</td>\n  <td>\n    <div class=\"btn-group\" role=\"group\" aria-label=\"...\">\n      <button data-id=\""
+	    + "\n    <div class=\"btn-group\" role=\"group\" aria-label=\"...\">\n      <button data-id=\""
+	    + alias2(alias1((depth0 != null ? depth0.id : depth0), depth0))
+	    + "\" type=\"button\" class=\"btn btn-primary change-creation-title\">Edit Title</button>\n    </div>\n    <div class=\"btn-group\" role=\"group\" aria-label=\"...\">\n      <button data-id=\""
 	    + alias2(alias1((depth0 != null ? depth0.id : depth0), depth0))
 	    + "\" type=\"button\" class=\"btn btn-danger delete-creation\">Delete</button>\n    </div>\n  </td>\n  <td><img src=\""
 	    + alias2(alias1((depth0 != null ? depth0.picture : depth0), depth0))
@@ -1755,7 +1788,7 @@ webpackJsonp([0],[
 	var Handlebars = __webpack_require__(9);
 	function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 	module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-	    return "<tr>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">title</td>\n  <td></td>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">picture</td>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">artist_name<tb>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">description</td>\n</tr>\n";
+	    return "<tr>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">title</td>\n  <td></td>\n  <td></td>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">picture</td>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">artist_name<tb>\n  <td style=\"color: #fff; font-size: 40px; text-align: center; \">description</td>\n</tr>\n";
 	},"useData":true});
 
 /***/ },

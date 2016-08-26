@@ -77,6 +77,14 @@ const deleteCreation = (creationID) => $.ajax({
   },
 });
 
+const changeCreationTitle = (data, creationID) => $.ajax({
+  url: app.api + '/creations/' + creationID,
+  method: 'PATCH',
+  headers: {
+    Authorization: 'Token token=' + app.user.token,
+  },
+  data,
+});
 
 module.exports = {
     signUp,
@@ -87,5 +95,6 @@ module.exports = {
     viewCreations,
     viewArtist,
     deleteCreation,
-    viewUserCreations
+    viewUserCreations,
+    changeCreationTitle
   };

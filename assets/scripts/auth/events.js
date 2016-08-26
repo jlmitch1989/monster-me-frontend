@@ -60,7 +60,7 @@ const showCreations = function () {
 const userCreations = function() {
   api.viewUserCreations()
     .done(ui.viewUserCreationsSuccess)
-    .fail(ui.failure)
+    .fail(ui.failure);
 };
 
 // Show artist info
@@ -79,6 +79,16 @@ const deleteMyCreation = function () {
     .fail(ui.failure);
 };
 
+let editCreationID;
+
+const patchCreationTitle = function (event) {
+  let data = getFormFields(this);
+  // console.log('data:', data);
+  event.preventDefault();
+  api.changeCreationTitle(data, editCreationID)
+    .done(ui.addPatchCreationTitleSuccess)
+    .fail(ui.failure);
+};
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
@@ -118,6 +128,11 @@ const addHandlers = () => {
     $('#main-photo').hide();
     $('#creation-form-section').hide();
     $('#body-describe').hide();
+  });
+  $('.change-title-form').on('submit', patchCreationTitle);
+  $('.table').on('click', '.change-creation-title', function() {
+    editCreationID = $(this).data('id');
+    $('#title-change-modal').modal('show');
   });
 };
 
