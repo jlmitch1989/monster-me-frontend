@@ -111,6 +111,7 @@ const addHandlers = () => {
   });
   $('.go-to-artist').on('click', showArtist);
   $('.go-to-artist').on('click', function(){
+    $('.all-artist').show();
     $('.all-creations').hide();
     $('#main-photo').hide();
     $('#creation-form-section').hide();
@@ -127,6 +128,7 @@ const addHandlers = () => {
   $('#user-creations').on('click', userCreations);
   $('#user-creations').on('click', function(){
     $('.all-creations').show();
+    $('.all-artist').hide();
     $('#main-photo').hide();
     $('#creation-form-section').hide();
     $('#body-describe').hide();
