@@ -1,11 +1,9 @@
-{{>partial}}
-
 {{#each this}}
-{{#each users}}
+  {{#each users}}
 
-<tr>
-  <td style="color: #fff; font-size: 18px; text-align: center; ">{{this.email}}</td>
-</tr>
+  <ul>
+    <li>{{this.email}}</li>
+  </ul>
 
   {{/each}}
 {{/each}}

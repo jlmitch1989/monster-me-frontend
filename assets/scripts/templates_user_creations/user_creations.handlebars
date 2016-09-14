@@ -1,21 +1,18 @@
-{{>partial}}
-
 {{#each this}}
-{{#each creations}}
+  {{#each creations}}
 
-<tr>
-  <td style="color: #fff; font-size: 18px; text-align: center; ">{{this.title}}
-    <div class="btn-group" role="group" aria-label="...">
-      <button data-id="{{this.id}}" type="button" class="btn btn-primary change-creation-title">Edit Title</button>
+    <div>
+      <div class="btn-group" role="group" aria-label="...">
+        <button data-id="{{this.id}}" type="button" class="btn btn-primary change-creation-title">Edit Title</button>
+      </div>
+      <div class="btn-group" role="group" aria-label="...">
+        <button data-id="{{this.id}}" type="button" class="btn btn-danger delete-creation">Delete</button>
+      </div>
+      <h2 class="creation-title">{{this.title}}</h2>
+      <img src="{{this.picture}}"/>
+      <h2 class="creation-artist">{{this.artist_name}}</h2>
+      <p class="creation-description">{{this.description}}</p>
     </div>
-    <div class="btn-group" role="group" aria-label="...">
-      <button data-id="{{this.id}}" type="button" class="btn btn-danger delete-creation">Delete</button>
-    </div>
-  </td>
-  <td><img src="{{this.picture}}" alt="" /></td>
-  <td style="color: #fff; font-size: 18px; text-align: center; ">{{this.artist_name}}</td>
-  <td style="color: #fff; font-size: 18px; text-align: center; ">{{this.description}}</td>
-</tr>
 
   {{/each}}
 {{/each}}

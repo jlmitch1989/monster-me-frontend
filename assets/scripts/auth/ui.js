@@ -59,8 +59,8 @@ const viewCreationsSuccess = (data) => {
 let displayUserCreations = function(creations) {
   // console.log('creations' + creations);
   let userCreationTemplate = require('../templates_user_creations/user_creations.handlebars');
-  $('.table').empty();
-  $('.table').html(userCreationTemplate({
+  $('.all-creations').empty();
+  $('.all-creations').html(userCreationTemplate({
     creations
   }));
 };
@@ -74,8 +74,8 @@ displayUserCreations(data);
 let displayArtist = function(users) {
   console.log('Artist' + users);
   let artistTemplate = require('../templates_artist/artist.handlebars');
-  $('.table').empty();
-  $('.table').html(artistTemplate({
+  $('.all-artist').empty();
+  $('.all-artist').html(artistTemplate({
     users
   }));
 };
@@ -93,6 +93,7 @@ const deleteCreationSuccess = () => {
   console.log(app);
 };
 
+// update user creation
 const addPatchCreationTitleSuccess = () => {
   console.log(app);
 };

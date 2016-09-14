@@ -96,41 +96,43 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
   $('#sign-out').on('submit', function(){
-    $('.table').hide();
+    $('.all-creations').hide();
     $('#main-photo').show();
     $('#body-describe').show();
   });
   $('.add-creation-form').on('submit', addMyCreation);
   $('.view-creations-btn').on('click', showCreations);
   $('.view-creations-btn').on('click', function(){
-    $('.table').show();
+    $('.all-creations').show();
     $('#main-photo').hide();
     $('#creation-form-section').hide();
     $('#body-describe').hide();
+    $('.all-artist').hide();
   });
   $('.go-to-artist').on('click', showArtist);
   $('.go-to-artist').on('click', function(){
-    $('.table').show();
+    $('.all-creations').hide();
     $('#main-photo').hide();
     $('#creation-form-section').hide();
     $('#body-describe').hide();
   });
   $('.home').on('click', function(){
-    $('.table').hide();
+    $('.all-creations').hide();
+    $('.all-artist').hide();
     $('#creation-form-section').show();
     $('#body-describe').show();
     $('#main-photo').show();
   });
-  $('.table').on('click', '.delete-creation', deleteMyCreation);
+  $('.all-creations').on('click', '.delete-creation', deleteMyCreation);
   $('#user-creations').on('click', userCreations);
   $('#user-creations').on('click', function(){
-    $('.table').show();
+    $('.all-creations').show();
     $('#main-photo').hide();
     $('#creation-form-section').hide();
     $('#body-describe').hide();
   });
-  $('.change-title-form').on('submit', patchCreationTitle);
-  $('.table').on('click', '.change-creation-title', function() {
+  $('.change-title').on('submit', patchCreationTitle);
+  $('.all-creations').on('click', '.change-creation-title', function() {
     editCreationID = $(this).data('id');
     $('#title-change-modal').modal('show');
   });
