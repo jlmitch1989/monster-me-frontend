@@ -2,10 +2,10 @@
   {{#each creations}}
 
     <div>
-     <h5>{{this.title}}</h5>
-     <img src="{{this.picture}}"  height="350px" width="300px" />
-     <h5>{{this.artist_name}}</h5>
-     <p>{{this.description}}</p>
+     <h2 class="creation-title">{{this.title}}</h2>
+     <img src="{{this.picture}}"/>
+     <h2 class="creation-artist">{{this.artist_name}}</h2>
+     <p class="creation-description">{{this.description}}</p>
     </div>
 
   {{/each}}

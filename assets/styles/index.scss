@@ -43,6 +43,35 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: 335px;
 }
 
+// ALL CREATIONS HANDLEBARS STRUCTURE
+.all-creations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.all-creations div {
+  padding: 6%;
+  width: 33%;
+  img{
+    width: 100%;
+  }
+}
+
+.creation-title {
+  color: #ffffff;
+}
+
+.creation-artist {
+  color: #ffffff;
+}
+
+.creation-description {
+  margin: 0 auto;
+}
+
 // padding for the fixed navbar to keep from overlaying my text
 body {
   background-color: #010001;
