@@ -41,8 +41,8 @@ const addCreationSuccess = (data) => {
 let displayCreations = function(creations) {
   // console.log('creations' + creations);
   let creationTemplate = require('../templates_creations/creations.handlebars');
-  $('.table').empty();
-  $('.table').html(creationTemplate({
+  $('.all-creations').empty();
+  $('.all-creations').html(creationTemplate({
     creations
   }));
 };

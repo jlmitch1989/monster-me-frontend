@@ -1,14 +1,12 @@
-{{>partial}}
-
 {{#each this}}
-{{#each creations}}
+  {{#each creations}}
 
-<tr>
-  <td style="color: #fff; font-size: 18px; text-align: center; ">{{this.title}}</td>
-  <td><img src="{{this.picture}}" alt="" /></td>
-  <td style="color: #fff; font-size: 18px; text-align: center; ">{{this.artist_name}}</td>
-  <td style="color: #fff; font-size: 18px; text-align: center; ">{{this.description}}</td>
-</tr>
+    <div>
+     <h5>{{this.title}}</h5>
+     <img src="{{this.picture}}"  height="350px" width="300px" />
+     <h5>{{this.artist_name}}</h5>
+     <p>{{this.description}}</p>
+    </div>
 
   {{/each}}
 {{/each}}
